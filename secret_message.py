@@ -1,4 +1,6 @@
+import datetime
 secret_message = input("What is your secret message? ")
+send_time = str(datetime.datetime.now())
 recipient = input("Who is this message intended for? ")
 
 #Strip extra spaces
@@ -7,6 +9,7 @@ recipient = recipient.strip()
 print(f"Secret message: {secret_message}\nRecipient: {recipient}")
 
 #message transformation
+secret_message = " \nThis message was sent at: ".join([secret_message,send_time])
 uppercase_message = secret_message.upper()
 clean_message = secret_message.capitalize()
 reverse_message = secret_message[::-1]
